@@ -32,4 +32,11 @@ public class PhoneBook {
     public static Map<String, String> getPhoneBook() {
         return phoneBook;
     }
+
+    public static void printAllNames() {
+        Set<String> set = new TreeSet<>(phoneBook.keySet());
+        for (String s : set) {
+            System.out.println(s);
+        }
+    }
 }

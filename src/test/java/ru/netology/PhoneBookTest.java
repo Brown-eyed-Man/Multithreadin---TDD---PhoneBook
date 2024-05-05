@@ -3,6 +3,8 @@ package ru.netology;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.*;
+
 class PhoneBookTest {
 
     @Test
@@ -82,4 +84,16 @@ class PhoneBookTest {
         String result = PhoneBook.findByName(name);
         Assertions.assertEquals(expectedNumber, result);
     }
+
+    @Test
+    public void printAllNamesTest() {
+        Set<String> names = new TreeSet<>();
+        names.add("Nikolay");
+        names.add("Alexey");
+        names.add("Marina");
+
+        Set<String> result = PhoneBook.getPhoneBook().keySet();
+        PhoneBook.printAllNames();
+        Assertions.assertEquals(names, result);
+        }
 }
