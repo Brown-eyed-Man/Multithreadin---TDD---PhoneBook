@@ -49,4 +49,20 @@ class PhoneBookTest {
         int result = PhoneBook.add(name, number);
         Assertions.assertEquals(expectedSize, result);
     }
+
+    @Test
+    public void findByNumberTestPositive() {
+        String number = "12";
+        String expectedName = "Marina";
+        String result = PhoneBook.findByNumber(number);
+        Assertions.assertEquals(expectedName, result);
+    }
+
+    @Test
+    public void findByNumberTestNegative() {
+        String number = "55";
+        String expectedName = "Абонент с таким номером не существует.";
+        String result = PhoneBook.findByNumber(number);
+        Assertions.assertEquals(expectedName, result);
+    }
 }
