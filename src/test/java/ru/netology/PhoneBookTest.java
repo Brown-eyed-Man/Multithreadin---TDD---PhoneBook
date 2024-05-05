@@ -65,4 +65,21 @@ class PhoneBookTest {
         String result = PhoneBook.findByNumber(number);
         Assertions.assertEquals(expectedName, result);
     }
+
+    @Test
+    public void findByNameTestPositive() {
+        PhoneBook.getPhoneBook().put("Alexey", "1");
+        String name = "Alexey";
+        String expectedNumber = "1";
+        String result = PhoneBook.findByName(name);
+        Assertions.assertEquals(expectedNumber, result);
+    }
+
+    @Test
+    public void findByNameTestNegative() {
+        String name = "Biden";
+        String expectedNumber = "Абонент с таким именем не существует.";
+        String result = PhoneBook.findByName(name);
+        Assertions.assertEquals(expectedNumber, result);
+    }
 }

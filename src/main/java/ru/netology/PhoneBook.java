@@ -21,4 +21,12 @@ public class PhoneBook {
         }
         return "Абонент с таким номером не существует.";
     }
+
+    public static String findByName(String name) {
+        return null;
+    }
+
+    public static Map<String, String> getPhoneBook() {
+        return phoneBook;
+    }
 }
